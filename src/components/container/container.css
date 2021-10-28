@@ -1,0 +1,23 @@
+.main-container {
+    max-width: 1130px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 0 20px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    gap: 30px;
+    z-index: -1;
+}
+
+@media screen and (max-width: 910px){
+    .main-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media screen and (max-width: 768px) { 
+    .main-container {
+        margin: 20px auto;
+        padding-bottom: 45px;
+    }
+}
