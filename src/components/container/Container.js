@@ -9,7 +9,7 @@ import './container.css'
 
 
 
-export const Container = ({ search, history, setName }) => {
+export const Container = ({ currentGifName, setCurrentGifName }) => {
 
     const { theme } =  useContext( ThemeContext );
 
@@ -23,8 +23,8 @@ export const Container = ({ search, history, setName }) => {
 
     return (
         <div className="main-container" style={ { backgroundColor: bgSegundary }}>
-            <ContainerGifs name={ search }/>
-            <History history={ history } setName={ setName }/>
+            <ContainerGifs currentGifName={ currentGifName }/>
+            <History currentGifName={ currentGifName } setCurrentGifName={ setCurrentGifName }/>
         </div>
     )
 }

@@ -20,10 +20,5 @@ export const useTheme = ( name = 'light' ) => {
     }, [name])
 
 
-
-
-  
-
-
     return { theme: initialTheme , themeName };
 }
