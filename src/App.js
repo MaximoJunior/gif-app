@@ -7,18 +7,15 @@ import { useTheme } from './hooks/useTheme';
 
 function App() {
 
-
-    const [ currentTheme, setCurrentTheme ]  = useState( getTheme() || 'light' );
-    const { theme, themeName } = useTheme( currentTheme );
+    const { theme, themeName, changeTheme } = useTheme( getTheme() || 'light' );
 
     const searchHistory = getHistory();
-    const name = searchHistory[0] || 'Gif';
-
-    const [ currentGifName, setCurrentGifName ] = useState( name );
+    const gifName = searchHistory[0] || 'Gif';
+    const [ currentGifName, setCurrentGifName ] = useState( gifName );
     
 
     return (
-        <ThemeContext.Provider value={ { theme, themeName, setCurrentTheme } }>
+        <ThemeContext.Provider value={ { theme, themeName, setCurrentTheme:changeTheme } }>
             <Header setCurrentGifName={ setCurrentGifName } />
             <Container 
                 currentGifName={ currentGifName } 
